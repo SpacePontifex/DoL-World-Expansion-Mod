@@ -800,7 +800,7 @@
 	<<set $breastsensitivity to 3>>
 <</if>>
 <<if $genitalsensitivity is undefined>>
-	<<set $genitalsensitivity to 5>>
+	<<set $genitalsensitivity to 3>>
 <</if>>
 
 /*noeinan mod END*/
@@ -1594,7 +1594,7 @@
 /*Changed default body writing images setting*/
 
 <<if $bodywritingImages is undefined>>
-	<<set $bodywritingImages to false>>
+	<<set $bodywritingImages to true>>
 <</if>>
 
 /*noeinan mod END*/

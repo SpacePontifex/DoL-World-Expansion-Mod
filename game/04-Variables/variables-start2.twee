@@ -179,7 +179,7 @@
 /*noeinan mod START*/
 /*Changed default settings for bodywriting images*/
 
-<<set $bodywritingImages to false>>
+<<set $bodywritingImages to true>>
 
 /*noeinan mod END*/
 

@@ -105,11 +105,11 @@
 /*Removed possibility of animals, set all NPCs to male, increased gay couples to 30%*/
 
 <<set $malechance to 100>>
-<<set $malevictimchance to 100>>
+<<set $malevictimchance to 50>>
 <<set $homochance to 30>>
 <<set $beastmalechance to 100>>
-<<set $monsterhallucinations to "f">>
-<<set $monsterchance to 100>>
+<<set $monsterhallucinations to "t">>
+<<set $monsterchance to 50>>
 
 /*noeinan mod END*/
 

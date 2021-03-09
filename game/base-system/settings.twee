@@ -63,7 +63,7 @@
 <<set $saveName to "">>
 <<set $zoom to 100>>
 <<set $checkstyle to "percentage">>
-<<set $blackwolfmonster to 1>>
+<<set $blackwolfmonster to 0>>
 <<set $player.ballsExist to false>>
 <<set $blinkingdisable to "f">>
 <<set $halfcloseddisable to "f">>
@@ -660,30 +660,27 @@
 	<</nobr>><</widget>>
 
 
-	<<widget "beastSettings">><<nobr>>
+<<widget "beastSettings">><<nobr>>
 		<div class="solidBorderContainer">
 		<br>
-
-			/*noeinan mod START*/
-			/*Made it so there is always at least a 50% chance to have beastfolk instead of animals.*/
-			/*Removed hallucinations option, because it doesn't make sense with the setting.*/
-
-			<span class="gold">Percentage of beasts attracted to you that are male</span>
-			<br>
-			<<numberslider "$beastmalechance" $beastmalechance 50 100 1>>
-			<br><br>
-
-			<span class="gold">Percentage of beasts that are replaced with monster girls or boys</span> - Requires bestiality to be enabled.
-			<br>
-			<<numberslider "$monsterchance" $monsterchance 0 100 1>>
-			<br><br>
-
-			<span class="gold">Percentage of beastfolk attracted to you that are male</span>
+			<span class="gold">Percentage of beasts or monsters attracted to you that are male</span>
 			<br>
 			<<numberslider "$beastmalechance" $beastmalechance 0 100 1>>
 			<br><br>
 
-			/*noeinan mod END*/
+			<span class="gold">Percentage of beasts that are replaced with monster girls or boys</span>
+			<br>
+			<<numberslider "$monsterchance" $monsterchance 0 100 1>>
+			<br><br>
+
+			<span class="gold">Replace beasts with monster boys and girls</span>
+			<br>
+			<label>Only when hallucinating <<print '<<radiobutton "$monsterhallucinations" "t" ' + ($monsterhallucinations is "t" ? "checked" : "") + '>>'>></label> |
+			<label>At any time <<print '<<radiobutton "$monsterhallucinations" "f" ' + ($monsterhallucinations is "f" ? "checked" : "") + '>>'>></label>
+			<br><br>
+
+			<span class="red">Disabling bestiality will automatically replace all beasts with monster girls or boys, regardless of the above settings.</span>
+			<br>
 		
 			<span class="gold">Beast Toggles</span>
 			<br><span style="font-size: x-small; margin-left: 5px;">
@@ -697,11 +694,9 @@
 			<</button>>
 			</span><br>
 			<label><div class="settingsToggle">
-
-			/*noeinan mod START*/
-			/*Removed ability to enable beastiality in preferences*/
-			/*noeinan mod END*/
-
+			<<print '<<checkbox "$bestialitydisable" "t" "f" ' + ($bestialitydisable is "f" ? "checked" : "") + '>>'>> Enable bestiality
+			</div></label>
+			<label><div class="settingsToggle">
 			<<print '<<checkbox "$swarmdisable" "t" "f" ' + ($swarmdisable is "f" ? "checked" : "") + '>>'>> Enable swarms (Eels, etc)
 			</div></label>
 			<label><div class="settingsToggle">
@@ -1129,12 +1124,13 @@ Breast size
 <div style="clear:both;">/*Keep at end of toggles*/</div>
 
 <<if $NPCName[_npcId].nam is "Black Wolf">>
-
-	/*noeinan mod START*/
-	/*Removed ability to turn Black Wolf into a beast in preferences*/
-	/*noeinan mod END*/
+	Beast Type:
+	<br>
+	<label><<print '<<radiobutton "$blackwolfmonster" 0 ' + ($blackwolfmonster is 0 ? "checked" : "") + '>>'>> Always a beast</label> |
+	<label><<print '<<radiobutton "$blackwolfmonster" 1 ' + ($blackwolfmonster is 1 ? "checked" : "") + '>>'>> Monster girl or boy when requirements met</label> |
+	<label><<print '<<radiobutton "$blackwolfmonster" 2 ' + ($blackwolfmonster is 2 ? "checked" : "") + '>>'>> Always a monster girl or boy</label>
+	<br><br>
 <</if>>
-
 <<if $debug is 1>>
 	Hair Colour:
 	<br>

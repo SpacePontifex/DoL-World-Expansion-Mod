@@ -29,3 +29,5 @@ yarn-error.log
 #  (may run into permissions issues if you allow docker to create it)
 !/dist/.placeholder
 /debug.log
+*.save
+*.txt

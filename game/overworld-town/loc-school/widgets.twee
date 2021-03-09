@@ -455,14 +455,14 @@ Sirris approaches you. "Is there anything I can help clarify for you?"
 /*noeinan mod START*/
 /*Added Fox Transformation to River messing with player's animal ears check*/
 
-<<if $rng gte 91 and (($wolfgirl gte 4 and $transformationParts.wolf.ears isnot "hidden") or ($cat gte 4 and $transformationParts.cat.ears isnot "hidden")) or ($foxgirl gte 4 and $transformationParts.fox.ears isnot "hidden"))>>
+<<if $rng gte 91 and (($wolfgirl gte 4 and $transformationParts.wolf.ears isnot "hidden") or ($cat gte 4 and $transformationParts.cat.ears isnot "hidden") or ($foxgirl gte 4 and $transformationParts.fox.ears isnot "hidden"))>>
 
 <<npc River>><<person1>>River marches up and down the class. <<He>> stops beside you.
   <<if $riverbite isnot 1>>
 	<<set $riverbite to 1>>
-		"That headband is against school regulations," <<he>> says, grabbing one of your <<if $wolfgirl gte 4>>wolf<<elif $cat gte 4>>cat<<else>>fox<</if>> ears.
+		"That headband is against school regulations," <<he>> says, grabbing one of your <<if $wolfgirl gte 4>>wolf<<elseif $cat gte 4>>cat<<else>>fox<</if>> ears.
   <<else>>
-		"You're still wearing that silly headband?" <<he>> says. "I thought I made myself clear." <<He>> grabs one of your <<if $wolfgirl gte 4>>wolf<<elif $cat gte 4>>cat<<else>>fox<</if>> ears.
+		"You're still wearing that silly headband?" <<he>> says. "I thought I made myself clear." <<He>> grabs one of your <<if $wolfgirl gte 4>>wolf<<elseif $cat gte 4>>cat<<else>>fox<</if>> ears.
   <</if>>
 <<He>> tugs painfully.<<gpain>><<gstress>><<set $pain += 10>><<stress 1>>
 <br><br>
