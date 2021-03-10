@@ -135,9 +135,9 @@
 		<</if>>
 	<</if>>
 	<<if $_exposed>>
-		<<set $_text_output to "<span class='pink'>" + $_wearing + " <<underupperword>> <<underupperintegrity>> <<underupperclothescolour>> $worn.under_upper.name">>
+		<<set $_text_output to "<span class='pink'>" + $_wearing + " <<underupperword>> <<underupperintegrity>> <<underupperclothescolour>> $worn.under_upper.name</span>">>
 		<<if $_notOutfit>>
-			<<set $_text_output += " and <<underlowerword>> <<underlowerintegrity>> <<underlowerclothescolour>> $worn.under_lower.name</span>">>
+			<<set $_text_output += " and <<underlowerword>> <<underlowerintegrity>> <<underlowerclothescolour>> $worn.under_lower.name">>
 		<</if>>
 	<<else>>
 		<<set $_text_output to $_wearing + " <<underupperword>> <<underupperintegrity>> <<underupperclothescolour>> $worn.under_upper.name" + ($_notOutfit is undefined? '.':'')>>
